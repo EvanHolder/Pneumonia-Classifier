@@ -68,5 +68,8 @@ In this section I have displayed a few of the feature maps from the first convol
 
 <img src="notebook_images/sensitivity_specificity_thresholds.png"/>
 ![Alt text](notebook_images/sensitivity_specificity_thresholds.jpg?raw=true "Confusion Matrix")
+
+![alt text](https://github.com/EvanHolder/Pneumonia-Classifier/blob/main/notebook_images/cm_final_model.PNG?raw=true)
+
 And finally, I took a look at the true positive and true negative rates as compared with a range of decision thresholds. It was concluded that there is a tradeoffs in optimizing for more true positives and a decision threshold of 0.5 was appropriate.
 

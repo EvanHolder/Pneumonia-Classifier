@@ -1,6 +1,10 @@
+<table><tr>
+<td><img src="chest_xray/train/NORMAL/NORMAL2-IM-1423-0001.jpeg" style="width:380px;height:400px"/></td>
+<td><img src= "chest_xray/train/PNEUMONIA/person1945_bacteria_4872.jpeg" style="width:380px;height:400px"/></td>
+</tr></table>
 
 # Diagnosing Pneumonia Using CNNs
-Author: Evan Holder
+**Author:** Evan Holder
 Flatiron School - Phase 4 Project
 
 ## Repo Contents
@@ -8,18 +12,18 @@ Flatiron School - Phase 4 Project
 * Pneumonia_Classifier.ipynb
 * Pneumonia_Classifier-Jupyter-Notebook.pdf
 * Diagnosing-Pneumonia-CNN.pdf
-* Presentation Link: ()
+* Presentation Link: https://drive.google.com/file/d/1gBzbuWmz_wfz1uRq4lgYccAxKlsjbMGd/view?usp=sharing
 
 ## Data
-The data are xray images from Mendeley Data. I downloaded the entire dataset from Kaggle at: (https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia)
+The data are xray images from Mendeley Data. I downloaded the entire dataset from [Kaggle](https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia).
 
 ## Introduction and Overview
 
-Pneumonia is a lung infection that affects people of all ages with varying degrees of severity. In fact,the CDC reports that in 2018 about 1.5 million people were diagnosed with pneumonia and more than 40,000 of those people died. For children, pneumonia is the most infectious cause of death worldwide. in 2019, 740,180 children under the age of 5 died of pneumonia according to the WHO.  While pneumonia is prevalent and deadly in populations across the world, its also treatable with the proper diagnosis.  For this reason, it's important that the infection is correctly identified so that it can be treated with low-cost and low-tech medication. 
+Pneumonia is a lung infection that affects people of all ages with varying degrees of severity. In fact, the [CDC](https://www.cdc.gov/dotw/pneumonia/index.html) reports that in 2018 about 1.5 million people were diagnosed with pneumonia and more than 40,000 of those people died. For children, pneumonia is the most infectious cause of death worldwide. In 2019, 740,180 children under the age of 5 died of pneumonia according to the [WHO](https://www.who.int/news-room/fact-sheets/detail/pneumonia).  While pneumonia is prevalent and deadly in populations across the world, its also treatable with the proper diagnosis.  For this reason, it's important that the infection is correctly identified so that it can be treated with low-cost and low-tech medication.  
 
 ## Business Problem
 
-While pneumonia is diagnosable with symptoms and clinical features, chest x-rays remain the "gold standard" for confirming diagnosis of the infection.  Not only are x-rays widely available, but they're also relatively inexpensive and can be reviewed remotely.  With the advent of machine learning, it is possible to further decrease the cost of pneumonia diagnosis through identification of a pneumonia infection by way of convolutional neural networks.  Hospitals or general practices could administer X-rays and subsequently feed the images into a trained CNN to identify pneumonia without the need for a trained physician and/or simply use it to support a diagnosis. Once in use, this CNN would help lower the cost for both healthcare providers and patients themselves.
+While pneumonia is diagnosable with symptoms and clinical features, chest x-rays remain the ["gold standard"](https://pneumonia.biomedcentral.com/articles/10.15172/pneu.2014.5/464) for confirming diagnosis of the infection.  Not only are x-rays widely available, but they're also relatively inexpensive and can be reviewed remotely.  With the advent of machine learning, it is possible to further decrease the cost of pneumonia diagnosis through identification of a pneumonia infection by way of convolutional neural networks.  Hospitals or general practices could administer X-rays and subsequently feed the images into a trained CNN to identify pneumonia without the need for a trained physician and/or simply use it to support a diagnosis. Once in use, this CNN would help lower the cost for both healthcare providers and patients themselves.
 
 ## Data Understanding
 

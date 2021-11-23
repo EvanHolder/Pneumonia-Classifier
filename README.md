@@ -59,6 +59,8 @@ The final model was tested on holdout set and received an overall 92% accuracy, 
 
 <td><img src="notebook_images/cm_final_model.png" /></td>
 
+![Alt text](notebook_images/cm_final_model.png?raw=true "Confusion Matrix")
+
 Improvement - This model could improve by reducing the 45 false negatives. These are people who will not receive a pneumonia diagnosis and consequently treatment for their infection due to their missclassification by the model.  The model will need to be further improved with either more tuning, architectural changes, more images to train on, or all of the above. Another way to improve the model would be have trained medical profession view the output of the feature maps from the model.  
 
 <img src="notebook_images/feature_maps.png"/>

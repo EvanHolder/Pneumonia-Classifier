@@ -1,7 +1,7 @@
 <table><tr>
-<td><img src="notebook_images/NORMAL2-IM-1423-0001.jpeg" style="width:320px;height:330px"/></td>
-<td><img src= "notebook_images/person1945_bacteria_4872.jpeg" style="width:320px;height:330px"/></td>
-<td><img src= "notebook_images/person36_bacteria_185.jpeg" style="width:320px;height:330px"/></td> 
+<td><img src="notebook_images/NORMAL2-IM-1423-0001.jpeg" style="width:300px;height:300px"/></td>
+<td><img src= "notebook_images/person1945_bacteria_4872.jpeg" style="width:300px;height:300px"/></td>
+<td><img src= "notebook_images/person36_bacteria_185.jpeg" style="width:300px;height:300px"/></td> 
 </tr></table>
 
 # Diagnosing Pneumonia Using CNNs
@@ -9,7 +9,7 @@
 Flatiron School - Phase 4 Project
 
 ## Repo Contents
-* README
+* README.MD
 * Pneumonia_Classifier.ipynb
 * Pneumonia_Classifier-Jupyter-Notebook.pdf
 * Diagnosing-Pneumonia-CNN.pdf
@@ -61,14 +61,20 @@ This section focuses on picking the best model. The goal of the model is predict
 
 The final model was tested on holdout set and received an overall 92% accuracy, even better than the tuning data. False negatives did increase from the model's test by 2% from the tuning set. The model was 93% precise with pneumonia predictions (correctly classified pneumonia with 93% accuracy) and 90% precise with normal predictions.
 
-Improvement - This model could improve by reducing the 45 false negatives. These are people who will not receive a pneumonia diagnosis and consequently treatment for their infection due to their missclassification by the model.  The model will need to be further improved with either more tuning, architectural changes, more images to train on, or all of the above. Another way to improve the model would be have trained medical profession view the output of the feature maps from the model.  
-
 <p align="center">
-<img src= "https://github.com/EvanHolder/Pneumonia-Classifier/blob/main/notebook_images/feature_maps.PNG?raw=true" style="width:800px;height:194px" class="center"/>
+<img src= "https://github.com/EvanHolder/Pneumonia-Classifier/blob/main/notebook_images/model_test_results.PNG?raw=true" style="width:800px;height:522px" class="center"/>
 </p>
-In this section I have displayed a few of the feature maps from the first convolutional layer of the NN.  A trained eye could review this patterns highlighted by the model and tune the model according to more closely follow pneumonia infections as represented on xrays.
+The above barplot shows the accuracies achieved by the final model when tested on each set of data.  The model achieved a greatest accuracy of 94% on the training set as expected.  The model performed at 89% accuracy on the tuning set. The model actually performed better on the holdout set than on the tuning set which is an indication that the model did generalize well with a 92% accuracy.  Also important to note that the holdout set and the validation set are the same size (898 samples) and therefore equally reliable.
 
 <p align="center">
 <img src= "https://github.com/EvanHolder/Pneumonia-Classifier/blob/main/notebook_images/sensitivity_specificity_thresholds.PNG?raw=true" style="width:500px;height:346px" class="center"/>
 </p>
 And finally, I took a look at the true positive and true negative rates as compared with a range of decision thresholds. It was concluded that there is a tradeoffs in optimizing for more true positives and a decision threshold of 0.5 was appropriate.
+
+## Next Steps 
+This model could improve by reducing the 45 false negatives. These are people who will not receive a pneumonia diagnosis and consequently treatment for their infection due to their missclassification by the model.  The model will need to be further improved with either more tuning, architectural changes, more images to train on, or all of the above. Another way to improve the model would be have trained medical profession view the output of the feature maps from the model.  
+
+<p align="center">
+<img src= "https://github.com/EvanHolder/Pneumonia-Classifier/blob/main/notebook_images/feature_maps.PNG?raw=true" style="width:800px;height:194px" class="center"/>
+</p>
+Above, I have displayed a few of the feature maps from the first convolutional layer of the NN.  A trained eye could review this patterns highlighted by the model and tune the model according to more closely follow pneumonia infections as represented on xrays.

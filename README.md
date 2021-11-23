@@ -54,23 +54,13 @@ This section focuses on picking the best model. The goal of the model is predict
 3) Finally, consistency - many of the models' accuracies fluctuated wildly during tuning. I ended up choosing the model which was the most stable and consistent throughout the train/tuning process.  Models that train more consistently and whose tuning accuracies do fluctuate wildly from epoch to epoch are more likely to generalize better on unsee data.
 
 ## Final Model Validation
-![image](https://github.com/EvanHolder/Pneumonia-Classifier/notebook_images/cm_final_model.png?raw=True)
+<img src= "https://github.com/EvanHolder/Pneumonia-Classifier/blob/main/notebook_images/cm_final_model.PNG?raw=true" style="width:350px;height:330px" class="center"/>
 The final model was tested on holdout set and received an overall 92% accuracy, even better than the tuning data. False negatives did increase from the model's test by 2% from the tuning set. The model was 93% precise with pneumonia predictions (correctly classified pneumonia with 93% accuracy) and 90% precise with normal predictions.
-
-<td><img src="notebook_images/cm_final_model.png" /></td>
-
-![Alt text](notebook_images/cm_final_model.png?raw=true "Confusion Matrix")
 
 Improvement - This model could improve by reducing the 45 false negatives. These are people who will not receive a pneumonia diagnosis and consequently treatment for their infection due to their missclassification by the model.  The model will need to be further improved with either more tuning, architectural changes, more images to train on, or all of the above. Another way to improve the model would be have trained medical profession view the output of the feature maps from the model.  
 
-<img src="notebook_images/feature_maps.png"/>
+<img src= "https://github.com/EvanHolder/Pneumonia-Classifier/blob/main/notebook_images/feature_maps.PNG?raw=true" style="width:350px;height:330px" class="center"/>
 In this section I have displayed a few of the feature maps from the first convolutional layer of the NN.  A trained eye could review this patterns highlighted by the model and tune the model according to more closely follow pneumonia infections as represented on xrays.
 
-<img src="notebook_images/sensitivity_specificity_thresholds.png"/>
-![Alt text](notebook_images/sensitivity_specificity_thresholds.jpg?raw=true "Confusion Matrix")
-
-![alt text](https://github.com/EvanHolder/Pneumonia-Classifier/blob/main/notebook_images/cm_final_model.PNG?raw=true)
-
+<img src= "https://github.com/EvanHolder/Pneumonia-Classifier/blob/main/notebook_images/sensitivity_specificity_thresholds.PNG?raw=true" style="width:350px;height:330px" class="center"/>
 And finally, I took a look at the true positive and true negative rates as compared with a range of decision thresholds. It was concluded that there is a tradeoffs in optimizing for more true positives and a decision threshold of 0.5 was appropriate.
-
-<img src= "https://github.com/EvanHolder/Pneumonia-Classifier/blob/main/notebook_images/cm_final_model.PNG?raw=true" style="width:350px;height:330px"/>

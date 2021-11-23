@@ -73,3 +73,4 @@ In this section I have displayed a few of the feature maps from the first convol
 
 And finally, I took a look at the true positive and true negative rates as compared with a range of decision thresholds. It was concluded that there is a tradeoffs in optimizing for more true positives and a decision threshold of 0.5 was appropriate.
 
+<img src= "https://github.com/EvanHolder/Pneumonia-Classifier/blob/main/notebook_images/cm_final_model.PNG?raw=true" style="width:350px;height:330px"/>

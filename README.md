@@ -62,7 +62,7 @@ This section focuses on picking the best model. The goal of the model is predict
 The final model was tested on holdout set and received an overall 92% accuracy, even better than the tuning data. False negatives did increase from the model's test by 2% from the tuning set. The model was 93% precise with pneumonia predictions (correctly classified pneumonia with 93% accuracy) and 90% precise with normal predictions.
 
 <p align="center">
-<img src= "https://github.com/EvanHolder/Pneumonia-Classifier/blob/main/notebook_images/model_test_results.PNG?raw=true" style="width:800px;height:522px" class="center"/>
+<img src= "https://github.com/EvanHolder/Pneumonia-Classifier/blob/main/notebook_images/model_test_results.PNG?raw=true" style="width:600px;height:391px" class="center"/>
 </p>
 The above barplot shows the accuracies achieved by the final model when tested on each set of data.  The model achieved a greatest accuracy of 94% on the training set as expected.  The model performed at 89% accuracy on the tuning set. The model actually performed better on the holdout set than on the tuning set which is an indication that the model did generalize well with a 92% accuracy.  Also important to note that the holdout set and the validation set are the same size (898 samples) and therefore equally reliable.
 

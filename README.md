@@ -67,5 +67,6 @@ Improvement - This model could improve by reducing the 45 false negatives. These
 In this section I have displayed a few of the feature maps from the first convolutional layer of the NN.  A trained eye could review this patterns highlighted by the model and tune the model according to more closely follow pneumonia infections as represented on xrays.
 
 <img src="notebook_images/sensitivity_specificity_thresholds.png"/>
+![Alt text](notebook_images/sensitivity_specificity_thresholds.jpg?raw=true "Confusion Matrix")
 And finally, I took a look at the true positive and true negative rates as compared with a range of decision thresholds. It was concluded that there is a tradeoffs in optimizing for more true positives and a decision threshold of 0.5 was appropriate.
 

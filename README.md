@@ -57,6 +57,8 @@ This section focuses on picking the best model. The goal of the model is predict
 ![image](https://github.com/EvanHolder/Pneumonia-Classifier/notebook_images/cm_final_model.png?raw=True)
 The final model was tested on holdout set and received an overall 92% accuracy, even better than the tuning data. False negatives did increase from the model's test by 2% from the tuning set. The model was 93% precise with pneumonia predictions (correctly classified pneumonia with 93% accuracy) and 90% precise with normal predictions.
 
+<td><img src="notebook_images/cm_final_model.png" /></td>
+
 Improvement - This model could improve by reducing the 45 false negatives. These are people who will not receive a pneumonia diagnosis and consequently treatment for their infection due to their missclassification by the model.  The model will need to be further improved with either more tuning, architectural changes, more images to train on, or all of the above. Another way to improve the model would be have trained medical profession view the output of the feature maps from the model.  
 
 <img src="notebook_images/feature_maps.png"/>

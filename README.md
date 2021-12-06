@@ -28,7 +28,7 @@ While pneumonia is diagnosable with symptoms and clinical features, chest x-rays
 
 ## Data Understanding
 
-In this section are all import statements. I'll also looked at the layout of the dataset.  The dataset was already split into training/tuning/hold-out sets but disproportionately balanced (89-11-.3%). I moved images between sets to balance the datasets at 70-15-15% (train-tune-holdout).  Additionally I looked at the class balance in each set (training - 81% pneumonia/19% normal, tuning 59% pneumonia/ 41% normal, holdout- 50/50).
+In this section are all import statements. I'll also looked at the layout of the dataset.  The dataset was already split into training/validation/hold-out sets but disproportionately balanced (89-11-.3%). I moved images between sets to balance the datasets at 70-15-15% (train-validation-test).  Additionally I looked at the class balance in each set (training - 81% pneumonia/19% normal, validation 59% pneumonia/ 41% normal, testing- 50/50).
 
 Next I displayed an image and it's size.  Our image data are all in grayscale and at a high resolution.  These are important notes to make as it will affect the setup of our CNN.
 
@@ -48,31 +48,33 @@ This section will be dedicated to modeling. Each new model will be iteratively n
 
 ## Evaluation
 
-This section focuses on picking the best model. The goal of the model is predict pneumonia with the highest accuracy.
-1) Since I made 30+ models, I first narrowed my selection down to the top 10 models by overall accuracy.  The top 10 models acheived accuracies on the tuning set between 87% and 91% and f1 scores of 0.9 and above. 
-2) Next I looked at which model produced more/less false negatives.  In the case of classifying pneumonia, it would be much worse to produce more false negatives than false positives since a false negative means a sick patient not receiving care.  However, false negatives between the top 10 most accurate models did not vary significantly. 
-3) Finally, consistency - many of the models' accuracies fluctuated wildly during tuning. I ended up choosing the model which was the most stable and consistent throughout the train/tuning process.  Models that train more consistently and whose tuning accuracies do fluctuate wildly from epoch to epoch are more likely to generalize better on unsee data.
+This section focuses on picking the best model. Models ranged in performance from 59-91% accuracy. Choosing a model based on accuracy alone is not the best choice. As seen while training, most of these models had sizable variability in accuracy scores of epochs of training. Inconsistent training indicates that the model is either overfitting on the training data, or randomly classifying images without truely finding meaningful patterns. Either way, a model with such drastic fluctuations is not likely to generalize well to unseen data. For this reason, it's best to choose the model with a consistent, reliable training record. The raw results are below
 
-## Final Model Validation
 <table><tr>
 <td><img src="https://github.com/EvanHolder/Pneumonia-Classifier/blob/main/notebook_images/final_scores.PNG?raw=true" style="width:350px;height:125px"/></td>
 <td><img src="https://github.com/EvanHolder/Pneumonia-Classifier/blob/main/notebook_images/final_cm.PNG?raw=true" style="width:350px;height:275px"/></td>
 </tr></table>
 
-The final model was tested on holdout set and received an overall 92% accuracy, even better than the tuning data. False negatives did increase from the model's test by 2% from the tuning set. The model was 93% precise with pneumonia predictions (correctly classified pneumonia with 93% accuracy) and 90% precise with normal predictions.
+The final model was tested on test set and received an overall 88% accuracy, even better than the validation data. False negatives did increase from the model's test by 2% from the validation set. The model was 95% precise with pneumonia predictions (correctly classified pneumonia with 95% accuracy) and 83% precise with normal predictions.
 
 <p align="center">
 <img src= "https://github.com/EvanHolder/Pneumonia-Classifier/blob/main/notebook_images/model_test_results.PNG?raw=true" style="width:600px;height:391px" class="center"/>
 </p>
-The above barplot shows the accuracies achieved by the final model when tested on each set of data.  The model achieved a greatest accuracy of 94% on the training set as expected.  The model performed at 89% accuracy on the tuning set. The model actually performed better on the holdout set than on the tuning set which is an indication that the model did generalize well with a 92% accuracy.  Also important to note that the holdout set and the validation set are the same size (898 samples) and therefore equally reliable.
+The above barplot shows the accuracies achieved by the final model when tested on each set of data.  The model achieved a greatest accuracy of 89% on the training set as expected.  The model performed at 86% accuracy on the validation set. The model actually performed better on the testing set than on the validation set which is an indication that the model did generalize well with a 88% accuracy.  Also important to note that the validation set and the testing set are the same size (898 samples) and therefore equally reliable.
 
 <p align="center">
 <img src= "https://github.com/EvanHolder/Pneumonia-Classifier/blob/main/notebook_images/sensitivity_specificity_thresholds.PNG?raw=true" style="width:500px;height:346px" class="center"/>
 </p>
-And finally, I took a look at the true positive and true negative rates as compared with a range of decision thresholds. It was concluded that there is a tradeoffs in optimizing for more true positives and a decision threshold of 0.5 was appropriate.
+And finally, I took a look at the true positive and true negative rates as compared with a range of decision thresholds. It was concluded that the tradeoff in lowering the decision threshold to 0.42 to obtain more true positives is worth the decrease in true negatives. Below shows the confusion matrix when using a decision threshold of 0.42, which increased the model's overall accuracy from 88% to 89%.
+
+<table><tr>
+<td><img src="https://github.com/EvanHolder/Pneumonia-Classifier/blob/main/notebook_images/final_scores_decrease_t.PNG?raw=true" style="width:350px;height:125px"/></td>
+<td><img src="https://github.com/EvanHolder/Pneumonia-Classifier/blob/main/notebook_images/final_cm_decrease_t.PNG?raw=true" style="width:350px;height:275px"/></td>
+</tr></table>
+
 
 ## Next Steps 
-This model could improve by reducing the 45 false negatives. These are people who will not receive a pneumonia diagnosis and consequently treatment for their infection due to their missclassification by the model.  The model will need to be further improved with either more tuning, architectural changes, more images to train on, or all of the above. Another way to improve the model would be have trained medical profession view the output of the feature maps from the model.  
+This model could improve by reducing the 67 false negatives. These are people who will not receive a pneumonia diagnosis and consequently treatment for their infection due to their missclassification by the model.  The model will need to be further improved with either more validation, architectural changes, more images to train on, or all of the above. Another way to improve the model would be have trained medical profession view the output of the feature maps from the model.  
 
 <p align="center">
 <img src= "https://github.com/EvanHolder/Pneumonia-Classifier/blob/main/notebook_images/feature_maps.PNG?raw=true" style="width:800px;height:194px" class="center"/>

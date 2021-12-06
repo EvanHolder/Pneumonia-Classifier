@@ -63,13 +63,13 @@ The final model was tested on test set and received an overall 88% accuracy, eve
 The above barplot shows the accuracies achieved by the final model when tested on each set of data.  The model achieved a greatest accuracy of 89% on the training set as expected.  The model performed at 86% accuracy on the validation set. The model actually performed better on the testing set than on the validation set which is an indication that the model did generalize well with a 88% accuracy.  Also important to note that the validation set and the testing set are the same size (898 samples) and therefore equally reliable.
 
 <p align="center">
-<img src= "https://github.com/EvanHolder/Pneumonia-Classifier/blob/main/notebook_images/sensitivity_specificity_thresholds.PNG?raw=true" style="width:500px;height:346px" class="center"/>
+<img src= "https://github.com/EvanHolder/Pneumonia-Classifier/blob/main/notebook_images/sensitivity_specificity_thresholds.PNG?raw=true" style="width:500px;height:302px" class="center"/>
 </p>
 And finally, I took a look at the true positive and true negative rates as compared with a range of decision thresholds. It was concluded that the tradeoff in lowering the decision threshold to 0.42 to obtain more true positives is worth the decrease in true negatives. Below shows the confusion matrix when using a decision threshold of 0.42, which increased the model's overall accuracy from 88% to 89%.
 
 <table><tr>
-<td><img src="https://github.com/EvanHolder/Pneumonia-Classifier/blob/main/notebook_images/final_scores_decrease_t.PNG?raw=true" style="width:350px;height:125px"/></td>
-<td><img src="https://github.com/EvanHolder/Pneumonia-Classifier/blob/main/notebook_images/final_cm_decrease_t.PNG?raw=true" style="width:350px;height:275px"/></td>
+<td><img src="https://github.com/EvanHolder/Pneumonia-Classifier/blob/main/notebook_images/final_scores_decrease_t.PNG?raw=true" style="width:350px;height:123px"/></td>
+<td><img src="https://github.com/EvanHolder/Pneumonia-Classifier/blob/main/notebook_images/final_cm_decrease_t.PNG?raw=true" style="width:350px;height:263px"/></td>
 </tr></table>
 
 

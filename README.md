@@ -69,7 +69,7 @@ And finally, I took a look at the true positive and true negative rates as compa
 
 <table><tr>
 <td><img src="https://github.com/EvanHolder/Pneumonia-Classifier/blob/main/notebook_images/final_scores_decrease_t.PNG?raw=true" style="width:350px;height:123px"/></td>
-<td><img src="https://github.com/EvanHolder/Pneumonia-Classifier/blob/main/notebook_images/final_cm_decrease_t.PNG?raw=true" style="width:350px;height:263px"/></td>
+<td><img src="https://github.com/EvanHolder/Pneumonia-Classifier/blob/main/notebook_images/final_cm_decrease_t.PNG?raw=true" style="width:350px;height:236px"/></td>
 </tr></table>
 
 

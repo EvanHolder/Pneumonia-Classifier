@@ -47,24 +47,24 @@ The data was read into the each model with ImageDataGenerator objects, one for t
 
 
 ## Evaluation
-Models ranged in performance from 59-91% accuracy on the validation set. Choosing a model based on accuracy alone is not the best choice. As seen while training, most of these models had sizable variability in accuracy scores over each epoch of training. Inconsistent training indicates that the model is either overfitting on the training data, or classifying images without truely finding meaningful patterns. Either way, a model with such drastic fluctuations is not likely to generalize well to unseen data. For this reason, it's best to choose the model with a consistent, reliable training record. Model **M<sub>20</sub>** was chosen for its more consistent training record. **M<sub>20</sub>** was then evaluated on the test set (holdout) and the results are presented below:
+Models ranged in performance from 59-91% recall on the validation set. Choosing a model based on recall alone is not the best choice. As seen while training, most of these models had sizable variability in recall scores over each epoch of training. Inconsistent training indicates that the model is either overfitting on the training data, or classifying images without truely finding meaningful patterns. Either way, a model with such drastic fluctuations is not likely to generalize well to unseen data. For this reason, it's best to choose the model with a consistent, reliable training record. Model **M<sub>20</sub>** was chosen for its more consistent training record. **M<sub>20</sub>** was then evaluated on the test set (holdout) and the results are presented below:
 
 <table><tr>
 <td><img src="https://github.com/EvanHolder/Pneumonia-Classifier/blob/main/notebook_images/final_scores.PNG?raw=true" style="width:350px;height:125px"/></td>
 <td><img src="https://github.com/EvanHolder/Pneumonia-Classifier/blob/main/notebook_images/final_cm.PNG?raw=true" style="width:350px;height:275px"/></td>
 </tr></table>
 
-The final model received an overall 88% accuracy, even better than the validation data. False negatives did increase from the validation to test set by 2%. The model was 95% precise with pneumonia predictions (correctly classified pneumonia with 95% accuracy) and 83% precise with normal predictions.
+The final model received an overall 88% recall, even better than the validation data. False negatives did increase from the validation to test set by 2%. The model was 95% precise with pneumonia patients and 83% precise with normal patients.
 
 <p align="center">
 <img src= "https://github.com/EvanHolder/Pneumonia-Classifier/blob/main/notebook_images/model_test_results.PNG?raw=true" style="width:600px;height:391px" class="center"/>
 </p>
-The above barplot shows the accuracies achieved by the final model when tested on each set of data.  The model achieved a greatest accuracy of 89% on the training set as expected.  The model performed at 86% accuracy on the validation set. The model actually performed better on the testing set than on the validation set which is an indication that the model generalized well with an 88% accuracy.  One more important note is that the validation set and the testing set are the same size (898 samples) and therefore equally reliable.
+The above barplot shows the recalls achieved by the final model when tested on each set of data.  The model achieved a greatest recall of 89% on the training set as expected.  The model performed at 86% recall on the validation set. The model actually performed better on the testing set than on the validation set which is an indication that the model generalized well with an 88% recall.  One more important note is that the validation set and the testing set are the same size (898 samples) and therefore equally reliable.
 
 And finally, I took a look at the true positive and true negative rates as compared with a range of decision thresholds on the ROC curve. As shown below, lowering the decision threshold from 0.5 to 0.42 results in correctly identifying more true positives than it incorrectly classifying true negatives.
 
 <p align="center">
-<img src= "https://github.com/EvanHolder/Pneumonia-Classifier/blob/main/notebook_images/sensitivity_specificity_thresholds.PNG?raw=true" style="width:500px;height:302px" class="center"/>
+<img src= "https://github.com/EvanHolder/Pneumonia-Classifier/blob/main/notebook_images/sensitivity_specificity_thresholds.jpg?raw=true" style="width:500px;height:302px" class="center"/>
 </p>
 
 For that reason, I moved the model's decision threshold down to 0.42 and which increased the model performance from 88% to 89%. The final results from the model are captured below.
